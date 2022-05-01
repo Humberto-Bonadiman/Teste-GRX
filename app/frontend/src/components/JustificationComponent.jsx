@@ -1,7 +1,15 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 export default function JustificationComponent() {
-  const [justificationType, setJustificationType] = useState('');
+  const { justificationType, setJustificationType } = useContext(AppContext);
+
+/*   const justificationLength = () => {
+    if (justificationType.length < 15 || justificationLength.length > 200) {
+      return false;
+    }
+    return true;
+  } */
 
   return(
     <fieldset>

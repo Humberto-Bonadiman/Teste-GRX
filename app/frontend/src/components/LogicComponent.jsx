@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 export default function LogicComponent() {
-  const [logicType, setLogicType] = useState('');
+  const { logicType, setLogicType } = useContext(AppContext);
+
   return (
     <fieldset>
       <label className="logic">1) Você se considera bom em lógica?</label>

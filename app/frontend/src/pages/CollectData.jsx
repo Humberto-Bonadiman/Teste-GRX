@@ -3,6 +3,7 @@ import LogicComponent from '../components/LogicComponent';
 import ChallengesComponent from '../components/ChallengesComponet';
 import SelectDataComponent from '../components/SelectDataComponent';
 import JustificationComponent from '../components/JustificationComponent';
+import SendDataComponent from '../components/SendDataComponent';
 
 function CollectData() {
   
@@ -15,6 +16,7 @@ function CollectData() {
         <ChallengesComponent />
         <SelectDataComponent />
         <JustificationComponent />
+        <SendDataComponent />
       </form>
     </>
   )

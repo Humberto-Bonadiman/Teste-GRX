@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 export default function ChallengesComponent() {
-  const [challengesType, setChallengesType] = useState('');
+  const { challengesType, setChallengesType } = useContext(AppContext);
   return (
     <fieldset>
       <label className="challenges">2) Gosta de aprender com desafios?</label>

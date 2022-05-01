@@ -1,8 +1,10 @@
-import React, { useState } from 'react';
+import React, { useContext } from 'react';
+import AppContext from '../context/AppContext';
 
 export default function SelectDataComponent() {
-  const [selectType, setSelectType] = useState('');
-  const dataSelect = ['Sim', 'Não', 'Não sei', 'Agora!!']
+  const { selectType, setSelectType } = useContext(AppContext);
+  const dataSelect = ['Sim', 'Não', 'Não sei', 'Agora!!'];
+
   return(
     <fieldset>
       <label className="selectData">3) Gostaria de fazer parte da GRX?</label>
