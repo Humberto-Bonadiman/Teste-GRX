@@ -1,20 +1,26 @@
-import React, { useState, useContext } from 'react';
+import React, { useState, useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 import { useHistory } from 'react-router';
 
 export default function SendDataComponent() {
-  const [activeButton, setActiveButton] = useState(true);
+  const [disabledButton, setdisabledButton] = useState(true);
   const {
     logicType,
-    setLogicType,
-    justificationType,
-    setJustificationType,
+    active,
     challengesType,
-    setChallengesType,
     selectType,
-    setSelectType,
   } = useContext(AppContext);
   const history = useHistory();
+
+  useEffect(() => {
+    const checkButton = () => {
+      if (logicType === '' && challengesType === '' && selectType === '' && active === false) {
+        return setdisabledButton(true);
+      }
+      return setdisabledButton(false);
+    }
+    checkButton();
+  }, [logicType, active, challengesType,selectType])
 
   const handleClick = () => {
     history.push('/result');
@@ -24,7 +30,7 @@ export default function SendDataComponent() {
     <button
       type="button"
       className="send-data-btn"
-      disabled={ activeButton }
+      disabled={ disabledButton }
       onClick={ handleClick }
     >
       Enviar

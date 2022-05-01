@@ -6,6 +6,7 @@ function Provider({ children }) {
   const [justificationType, setJustificationType] = useState('');
   const [challengesType, setChallengesType] = useState('');
   const [selectType, setSelectType] = useState('');
+  const [active, setActive] = useState(false);
 
   const contextValue = {
     logicType,
@@ -16,6 +17,8 @@ function Provider({ children }) {
     setChallengesType,
     selectType,
     setSelectType,
+    active,
+    setActive,
   };
 
   return (
