@@ -11,6 +11,7 @@ export default function SelectDataComponent() {
         name={ selectType }
         onChange={({ target: { value } }) => setSelectType(value)}
       >
+        <option value="" data-default disabled selected></option>
         { dataSelect.map((itemSelect, index) => (
           <option key={ index } value={ itemSelect }>{ itemSelect }</option>
         ))}

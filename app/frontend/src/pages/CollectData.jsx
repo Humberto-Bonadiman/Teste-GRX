@@ -2,6 +2,7 @@ import React from 'react';
 import LogicComponent from '../components/LogicComponent';
 import ChallengesComponent from '../components/ChallengesComponet';
 import SelectDataComponent from '../components/SelectDataComponent';
+import JustificationComponent from '../components/JustificationComponent';
 
 function CollectData() {
   
@@ -13,6 +14,7 @@ function CollectData() {
         <LogicComponent />
         <ChallengesComponent />
         <SelectDataComponent />
+        <JustificationComponent />
       </form>
     </>
   )
