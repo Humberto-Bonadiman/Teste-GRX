@@ -3,7 +3,7 @@ import AppContext from '../context/AppContext';
 
 export default function SelectDataComponent() {
   const { selectType, setSelectType } = useContext(AppContext);
-  const dataSelect = ['Sim', 'Não', 'Não sei', 'Agora!!'];
+  const dataSelect = ['Sim', 'Não', 'Não Sei', 'Agora!!'];
 
   return(
     <fieldset>
