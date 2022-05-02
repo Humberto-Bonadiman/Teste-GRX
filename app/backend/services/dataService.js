@@ -1,8 +1,9 @@
 const fs = require('fs').promises;
-const CreateModel = require('../models/createModel');
+const DataModel = require('../models/dataModel');
+const arquivoJson = './questionnaireAnswers.json';
 
 const create = async (questions) => {
-  const questionnaireAnswers = await CreateModel.create(questions);
+  const questionnaireAnswers = await DataModel.create(questions);
   fs.writeFile(arquivoJson, JSON.stringify(questionnaireAnswers))
   .then(() => {
     console.log('Arquivo escrito com sucesso!');
@@ -12,6 +13,11 @@ const create = async (questions) => {
   });
 
   return questionnaireAnswers;
-}
+};
 
-module.exports = { create };
+const getAll = async () => {
+  const dataJsonFile = await DataModel.getAll();
+  return dataJsonFile; 
+};
+
+module.exports = { create, getAll };

@@ -1,3 +1,6 @@
+const fs = require('fs').promises;
+const arquivoJson = './questionnaireAnswers.json';
+
 const create = async (questions) => {
   const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = questions;
   let QuantidadePositiva = 0;
@@ -26,4 +29,18 @@ const create = async (questions) => {
   return questionnaireAnswers;
 };
 
-module.exports = { create };
+const getAll = async () => {
+  const read = fs.readFile(arquivoJson, 'utf8')
+  .then((data) => {
+    console.log(`Conteúdo do arquivo: ${data}`);
+    return data;
+  })
+  .catch((err) => {
+    console.error(`Não foi possível ler o arquivo ${arquivoJson}\n Erro: ${err}`);
+    process.exit(1);
+  });
+
+  return read;
+}
+
+module.exports = { create, getAll };
