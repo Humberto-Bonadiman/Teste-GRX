@@ -14,7 +14,6 @@ export default function JustificationComponent() {
       return setActive(true);
     };
     justificationLength();
-    console.log(justificationType);
   }, [justificationType, setActive])
 
   return(

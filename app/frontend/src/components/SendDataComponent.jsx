@@ -14,7 +14,7 @@ export default function SendDataComponent() {
 
   useEffect(() => {
     const checkButton = () => {
-      if (logicType === '' && challengesType === '' && selectType === '' && active === false) {
+      if (logicType === '' || challengesType === '' || selectType === '' || active === false) {
         return setdisabledButton(true);
       }
       return setdisabledButton(false);
