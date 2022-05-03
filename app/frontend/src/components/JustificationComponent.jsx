@@ -1,9 +1,8 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
 
 export default function JustificationComponent() {
-  const [justificationType, setJustificationType] = useState('');
-  const { setActive } = useContext(AppContext);
+  const { setActive, justificationType, setJustificationType } = useContext(AppContext);
   
 
   useEffect(() => {

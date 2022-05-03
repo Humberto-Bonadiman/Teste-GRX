@@ -7,6 +7,8 @@ function Provider({ children }) {
   const [challengesType, setChallengesType] = useState('');
   const [selectType, setSelectType] = useState('');
   const [active, setActive] = useState(false);
+  const [getJson, setGetJson] = useState('');
+  const [showResult, setShowResult] = useState(false);
 
   const contextValue = {
     logicType,
@@ -19,6 +21,10 @@ function Provider({ children }) {
     setSelectType,
     active,
     setActive,
+    getJson,
+    setGetJson,
+    showResult,
+    setShowResult,
   };
 
   return (

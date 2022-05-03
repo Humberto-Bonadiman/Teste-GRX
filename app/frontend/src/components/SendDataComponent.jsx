@@ -1,6 +1,6 @@
 import React, { useState, useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
-import { useHistory } from 'react-router';
+import { postApiResult } from '../services/fetchApi';
 
 export default function SendDataComponent() {
   const [disabledButton, setdisabledButton] = useState(true);
@@ -9,8 +9,10 @@ export default function SendDataComponent() {
     active,
     challengesType,
     selectType,
+    justificationType,
+    setGetJson,
+    setShowResult,
   } = useContext(AppContext);
-  const history = useHistory();
 
   useEffect(() => {
     const checkButton = () => {
@@ -22,8 +24,12 @@ export default function SendDataComponent() {
     checkButton();
   }, [logicType, active, challengesType,selectType])
 
-  const handleClick = () => {
-    history.push('/result');
+  const handleClick = async () => {
+    await postApiResult(logicType, challengesType, selectType, justificationType);
+    setShowResult(true);
+    await fetch('http://localhost:3001/collect')
+      .then((response) => response.json())
+      .then((result) => setGetJson(JSON.parse(result)));
   };
 
   return(

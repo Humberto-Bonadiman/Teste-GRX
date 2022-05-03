@@ -1,11 +1,11 @@
 import ProviderContext from './context/ProviderContext';
 import './App.css';
-import Routes from './routes/Routes';
+import AppRoutes from './routes/AppRoutes';
 
 function App() {
   return (
     <ProviderContext>
-      <Routes />
+      <AppRoutes />
     </ProviderContext>
   );
 }
