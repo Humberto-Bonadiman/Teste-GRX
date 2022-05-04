@@ -1,5 +1,6 @@
 import React, { useContext, useEffect } from 'react';
 import AppContext from '../context/AppContext';
+import '../styles/justificationComponent.css';
 
 export default function JustificationComponent() {
   const { setActive, justificationType, setJustificationType } = useContext(AppContext);
@@ -17,9 +18,10 @@ export default function JustificationComponent() {
 
   return(
     <fieldset>
-      <label className="justification">4) Por favor, justifique a resposta anterior</label>
+      <label class="form-label">4) Por favor, justifique a resposta anterior</label>
       <br/>
       <textarea
+        class="form-control"
         onChange={({ target: { value } }) => setJustificationType(value)}
       >
         { justificationType }

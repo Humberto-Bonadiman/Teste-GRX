@@ -1,0 +1,9 @@
+.title-result{
+  margin-top: 10px;
+}
+
+.number-result{
+  border: 1px solid black;
+  margin: 5px 0px;
+  text-align: center;
+}

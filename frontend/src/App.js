@@ -1,5 +1,7 @@
+import React from 'react';
 import ProviderContext from './context/ProviderContext';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 import AppRoutes from './routes/AppRoutes';
 
 function App() {

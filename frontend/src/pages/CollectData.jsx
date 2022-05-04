@@ -6,12 +6,13 @@ import JustificationComponent from '../components/JustificationComponent';
 import SendDataComponent from '../components/SendDataComponent';
 import DataResult from '../components/DataResult';
 import AppContext from '../context/AppContext';
+import '../styles/collectData.css';
 
 function CollectData() {
   const { showResult } = useContext(AppContext)
   
   return (
-    <>
+    <div className="form-data">
       <h1>Coleta de dados</h1>
       <form className="data-collect">
         <LogicComponent />
@@ -21,7 +22,7 @@ function CollectData() {
         <SendDataComponent />
         { showResult && <DataResult /> }
       </form>
-    </>
+    </div>
   )
 }
 

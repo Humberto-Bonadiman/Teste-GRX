@@ -38,13 +38,15 @@ export default function SendDataComponent() {
   };
 
   return(
-    <button
-      type="button"
-      className="send-data-btn"
-      disabled={ disabledButton }
-      onClick={ handleClick }
-    >
-      Enviar
-    </button>
+    <div class="d-grid gap-2">
+      <button
+        type="button"
+        class="btn btn-primary"
+        disabled={ disabledButton }
+        onClick={ handleClick }
+      >
+        Enviar
+      </button>
+    </div>
   )
 }

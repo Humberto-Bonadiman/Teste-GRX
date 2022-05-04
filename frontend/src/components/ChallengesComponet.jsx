@@ -5,28 +5,28 @@ export default function ChallengesComponent() {
   const { challengesType, setChallengesType } = useContext(AppContext);
   return (
     <fieldset>
-      <label className="challenges">2) Gosta de aprender com desafios?</label>
+      <label class="form-label">2) Gosta de aprender com desafios?</label>
       <br />
-      <label className="challenges-label" htmlFor="challenges-yes">
-        <input
-          className="challenges"
+      <input
+          class="btn-check"
           id="challenges-yes"
           type="radio"
           name={ challengesType }
           value="Sim"
           onChange={ ({ target: { value } }) => setChallengesType(value) }
         />
+      <label class="btn btn-secondary" htmlFor="challenges-yes">
         Sim
       </label>
-      <label className="challenges-label" htmlFor="challenges-no">
-        <input
-          className="challenges"
+      <input
+          class="btn-check"
           id="challenges-no"
           type="radio"
           name={ challengesType }
           value="Não"
           onChange={ ({ target: { value } }) => setChallengesType(value) }
         />
+      <label class="btn btn-secondary" htmlFor="challenges-no">
         Não
       </label>
     </fieldset>

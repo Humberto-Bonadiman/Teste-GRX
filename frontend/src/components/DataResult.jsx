@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
 import AppContext from '../context/AppContext';
+import '../styles/dataResult.css'
 
 function DataResult() {
   const { getJson } = useContext(AppContext);
@@ -16,36 +17,36 @@ function DataResult() {
     if (allNumbers[0] === getJson.QuantidadePositiva && allNumbers[1] === getJson.QuantidadeNegativa) {
       return (
         <div>
-          <p>Positiva: { getJson.QuantidadePositiva }</p>
-          <p>Negativa: { getJson.QuantidadeNegativa }</p>
-          <p>Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
+          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
+          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
         </div>
       )
     }
     if (allNumbers[1] === getJson.QuantidadePositiva && allNumbers[0] === getJson.QuantidadeNegativa) {
       return (
         <div>
-          <p>Negativa: { getJson.QuantidadeNegativa }</p>
-          <p>Positiva: { getJson.QuantidadePositiva }</p>
-          <p>Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
+          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
+          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
         </div>
       )
     }
     if (allNumbers[0] === getJson.QuantidadePositiva && allNumbers[1] === getJson.QuantidadeNaoAvaliada) {
       return (
         <div>
-          <p>Positiva: { getJson.QuantidadePositiva }</p>
-          <p>Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
-          <p>Negativa: { getJson.QuantidadeNegativa }</p>
+          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
+          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
         </div>
       )
     }
     if (allNumbers[0] === getJson.QuantidadeNegativa && allNumbers[1] === getJson.QuantidadeNaoAvaliada) {
       return (
         <div>
-          <p>Negativa: { getJson.QuantidadeNegativa }</p>
-          <p>Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
-          <p>Positiva: { getJson.QuantidadePositiva }</p>
+          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
+          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
         </div>
       )
     }
@@ -53,9 +54,7 @@ function DataResult() {
 
   return (
     <>
-      <header>
-        <h1>Resultado coleta de dados</h1>
-      </header>
+      <h2 className="title-result">Resultado coleta de dados</h2>
       <section>
         { organizeResults() }
       </section>
