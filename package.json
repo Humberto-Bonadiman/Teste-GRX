@@ -3,10 +3,6 @@
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
-  "scripts": {
-    "postinstall": "npm run install:apps",
-    "install:apps": "./apps_install.sh"
-  },
   "dependencies": {
     "bootstrap": "^5.1.3",
     "cors": "^2.8.5"
