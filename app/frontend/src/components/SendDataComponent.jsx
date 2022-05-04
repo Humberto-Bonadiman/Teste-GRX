@@ -27,7 +27,7 @@ export default function SendDataComponent() {
   const handleClick = async () => {
     await postApiResult(logicType, challengesType, selectType, justificationType);
     setShowResult(true);
-    await fetch('http://localhost:3001/collect')
+    await fetch('../questionnaireAnswers.json')
       .then((response) => response.json())
       .then((result) => setGetJson(JSON.parse(result)));
   };

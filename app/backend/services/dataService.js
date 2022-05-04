@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 const DataModel = require('../models/dataModel');
-const arquivoJson = './questionnaireAnswers.json';
+const arquivoJson = '../frontend/src/questionnaireAnswers.json';
 
 const create = async (questions) => {
   const questionnaireAnswers = await DataModel.create(questions);

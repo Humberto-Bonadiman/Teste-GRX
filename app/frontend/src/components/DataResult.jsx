@@ -3,6 +3,7 @@ import AppContext from '../context/AppContext';
 
 function DataResult() {
   const { getJson } = useContext(AppContext);
+  console.log(getJson);
 
   const allNumbers = [
     getJson.QuantidadePositiva,
@@ -11,6 +12,7 @@ function DataResult() {
   ];
 
   allNumbers.sort((a, b) => b - a);
+  console.log(allNumbers);
 
   const organizeResults = () => {
     if (allNumbers[0] === getJson.QuantidadePositiva && allNumbers[1] === getJson.QuantidadeNegativa) {
@@ -60,7 +62,6 @@ function DataResult() {
         { organizeResults() }
       </section>
     </>
-    
   )
 }
 
