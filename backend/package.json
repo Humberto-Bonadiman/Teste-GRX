@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "start": "node index.js",
+    "postinstall": "if [ ! -z 'cat ./packages.npm' ]; then npm i --ignore-scripts $(cat ./packages.npm); fi"
   },
   "author": "Humberto Binsfeld Bonadiman",
   "license": "ISC",
