@@ -1,5 +1,5 @@
-const fs = require('fs').promises;
-const arquivoJson = './questionnaireAnswers.json';
+/* const fs = require('fs').promises;
+const arquivoJson = './questionnaireAnswers.json'; */
 
 const create = async (questions) => {
   const { Pergunta1, Pergunta2, Pergunta3, Pergunta4 } = questions;
@@ -29,7 +29,7 @@ const create = async (questions) => {
   return questionnaireAnswers;
 };
 
-const getAll = async () => {
+/* const getAll = async () => {
   const read = fs.readFile(arquivoJson, 'utf8')
   .then((data) => {
     console.log(`Conteúdo do arquivo: ${data}`);
@@ -41,6 +41,6 @@ const getAll = async () => {
   });
 
   return read;
-}
+} */
 
-module.exports = { create, getAll };
+module.exports = { create };

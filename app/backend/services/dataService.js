@@ -1,6 +1,6 @@
 const fs = require('fs').promises;
 const DataModel = require('../models/dataModel');
-const arquivoJson = '../frontend/src/questionnaireAnswers.json';
+const arquivoJson = '../frontend/src/components/questionnaireAnswers.json';
 
 const create = async (questions) => {
   const questionnaireAnswers = await DataModel.create(questions);
@@ -15,9 +15,9 @@ const create = async (questions) => {
   return questionnaireAnswers;
 };
 
-const getAll = async () => {
+/* const getAll = async () => {
   const dataJsonFile = await DataModel.getAll();
   return dataJsonFile; 
-};
+}; */
 
-module.exports = { create, getAll };
+module.exports = { create };

@@ -7,7 +7,7 @@ function Provider({ children }) {
   const [challengesType, setChallengesType] = useState('');
   const [selectType, setSelectType] = useState('');
   const [active, setActive] = useState(false);
-  const [getJson, setGetJson] = useState('');
+  const [getJson, setGetJson] = useState('true');
   const [showResult, setShowResult] = useState(false);
 
   const contextValue = {

@@ -7,10 +7,10 @@ const create = async (request, response) => {
   return response.status(201).json(result);
 }
 
-const getAll = async (_request, response) => {
+/* const getAll = async (_request, response) => {
   const result = await DataService.getAll();
 
   return response.status(200).json(result);
-}
+} */
 
-module.exports = { create, getAll };
+module.exports = { create };

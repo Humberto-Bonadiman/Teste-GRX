@@ -1,5 +1,5 @@
 export const postApiResult = async (Pergunta1, Pergunta2, Pergunta3, Pergunta4) => {
-  return await fetch(`http://localhost:3001/collect`, {
+  return await fetch(`http://localhost:3003/collect`, {
     method: 'POST',
     headers: {
       Accept: 'application/json',
