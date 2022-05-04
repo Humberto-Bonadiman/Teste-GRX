@@ -11,7 +11,6 @@ export default function SendDataComponent() {
     challengesType,
     selectType,
     justificationType,
-    // getJson,
     setGetJson,
     setShowResult,
   } = useContext(AppContext);

@@ -15,9 +15,4 @@ const create = async (questions) => {
   return questionnaireAnswers;
 };
 
-/* const getAll = async () => {
-  const dataJsonFile = await DataModel.getAll();
-  return dataJsonFile; 
-}; */
-
 module.exports = { create };
