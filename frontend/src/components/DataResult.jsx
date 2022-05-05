@@ -11,42 +11,66 @@ function DataResult() {
     getJson.QuantidadeNaoAvaliada
   ];
 
+  const sumNumbers = allNumbers.reduce((soma, index) => {
+    return soma + index;
+  });
+
+  const positivePercentage = parseInt((getJson.QuantidadePositiva / sumNumbers) * 100);
+  const negativePercentage = parseInt((getJson.QuantidadeNegativa / sumNumbers) * 100);
+  const unratedPercentage = parseInt((getJson.QuantidadeNaoAvaliada / sumNumbers) * 100);
+
+  const positiveText = (
+    <p className="number-result">
+      Positiva: { getJson.QuantidadePositiva }, % Positiva: { positivePercentage }%
+    </p>
+  );
+  const negativeText = (
+    <p className="number-result">
+      Negativa: { getJson.QuantidadeNegativa }, % Negativa: { negativePercentage }%
+    </p>    
+  );
+  const notEvaluatedText = (
+    <p className="number-result">
+      Não avaliada: { getJson.QuantidadeNaoAvaliada }, % Não Avaliada: { unratedPercentage }%
+    </p>
+  );
+
   allNumbers.sort((a, b) => b - a);
 
   const organizeResults = () => {
     if (allNumbers[0] === getJson.QuantidadePositiva && allNumbers[1] === getJson.QuantidadeNegativa) {
       return (
         <div>
-          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
-          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
-          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          { positiveText }
+          { negativeText }
+          { notEvaluatedText}
         </div>
       )
     }
     if (allNumbers[1] === getJson.QuantidadePositiva && allNumbers[0] === getJson.QuantidadeNegativa) {
       return (
         <div>
-          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
-          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
-          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
+          { negativeText }
+          { positiveText }
+          { notEvaluatedText }
         </div>
       )
     }
     if (allNumbers[0] === getJson.QuantidadePositiva && allNumbers[1] === getJson.QuantidadeNaoAvaliada) {
       return (
         <div>
-          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
-          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
-          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
+          { positiveText }
+          { notEvaluatedText }
+          { negativeText }
         </div>
       )
     }
     if (allNumbers[0] === getJson.QuantidadeNegativa && allNumbers[1] === getJson.QuantidadeNaoAvaliada) {
       return (
         <div>
-          <p className="number-result">Negativa: { getJson.QuantidadeNegativa }</p>
-          <p className="number-result">Não avaliada: { getJson.QuantidadeNaoAvaliada }</p>
-          <p className="number-result">Positiva: { getJson.QuantidadePositiva }</p>
+          { negativeText }
+          { notEvaluatedText }
+          { positiveText }
         </div>
       )
     }
@@ -56,6 +80,7 @@ function DataResult() {
     <>
       <h2 className="title-result">Resultado coleta de dados</h2>
       <section>
+        <p className="number-result">Total: { sumNumbers }</p>
         { organizeResults() }
       </section>
     </>
