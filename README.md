@@ -38,7 +38,7 @@ Para mim a etapa mais desafiadora foi a organização do projeto, o que me levou
 ---
 
 ## Etapas que faltaram
-Pelo que foi pedido, acredito que somente está faltando a parte bônus do projeto. Mas como melhorias eu adicionaria testes, realizaria a dockerização e realizar a estilização para mobile.
+Pelo que foi pedido, acredito que todos os requisitos do projeto foram realizados. Mas como melhorias eu adicionaria testes, realizaria a dockerização e alteraria o modo como é feito o npm install pois o mesmo precisa ser realizado na pasta raiz do projeto, na pasta frontend e na pasta backend, onde o ideal seria somente realizar na pasta raiz do projeto.
 
 ---
 
